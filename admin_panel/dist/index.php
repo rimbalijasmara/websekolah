@@ -1,7 +1,5 @@
 
 <?php include'header.php';?>
-<?php include'navbar.php';?>
-<?php include'sidebar.php';?>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">

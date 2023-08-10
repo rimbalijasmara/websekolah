@@ -13,7 +13,6 @@
     <body class="bg-pr">
 
         <?php include'header.php';?>
-        <?php include'navbar.php';?>
         
         <section class="vh-100 gradient-custom">
                     <div class="container py-5 h-100">
@@ -90,6 +89,9 @@
                                 <div class="mt-4 pt-2">
                                     <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
                                 </div>
+                                <div class="mt-4 pt-2">
+                                    <input class="btn btn-danger btn-lg" type="submit" value="Reset" />
+                                </div>
 
                                 </form>
                             </div>
@@ -98,6 +100,7 @@
                         </div>
                     </div>
 </section>
+<?php include'footer.php';?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
     </body>
