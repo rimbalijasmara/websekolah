@@ -21,14 +21,14 @@
                             <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
                             <div class="card-body p-4 p-md-5">
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
-                                <form>
+                                <form action="">
 
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
 
                                     <div class="form-outline">
-                                        <input type="text" id="firstName" class="form-control form-control-lg" />
-                                        <label class="form-label" for="firstName">User Name</label>
+                                        <input type="text" id="username" class="form-control form-control-lg" />
+                                        <label class="form-label" for="username">User Name</label>
                                     </div>
 
                                     </div>
@@ -46,8 +46,8 @@
                                     <div class="col-md-6 mb-4 d-flex align-items-center">
 
                                     <div class="form-outline datepicker w-100">
-                                        <input type="text" class="form-control form-control-lg" id="Name User" />
-                                        <label for="Name User" class="form-label">Name User</label>
+                                        <input type="text" class="form-control form-control-lg" id="namauser" />
+                                        <label for="namauser" class="form-label">Name User</label>
                                     </div>
 
                                     </div>
@@ -79,17 +79,17 @@
                                     <div class="col-md-6 mb-4 pb-2">
 
                                     <div class="form-outline">
-                                        <input type="password" id="password" class="form-control form-control-lg" />
-                                        <label class="form-label" for="password">Confirm Password</label>
+                                        <input type="password" id="password2" class="form-control form-control-lg" />
+                                        <label class="form-label" for="password2">Confirm Password</label>
                                     </div>
 
                                     </div>
                                 </div>
 
-                                <div class="mt-4 pt-2">
+                                <div class="row mt-4 pt-2">
                                     <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
                                 </div>
-                                <div class="mt-4 pt-2">
+                                <div class="row mt-4 pt-2">
                                     <input class="btn btn-danger btn-lg" type="submit" value="Reset" />
                                 </div>
 
