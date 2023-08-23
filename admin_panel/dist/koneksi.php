@@ -1,14 +1,14 @@
- <?php
- $data_host = "localhost";
- $data_user = "root";
- $data_password ="";
- $data_database ="admin1";
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "admin1";
 
-$conn = mysqli_connect($data_host, $data_user, $data_password, $data_database);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $database);
 
+// Check connection
 if (!$conn) {
-    die("" . mysqli_connect_error());
+  die("Koneksi Gagal: " . mysqli_connect_error());
 }
-echo "";
-mysqli_close($conn);
 ?>
