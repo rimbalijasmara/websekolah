@@ -38,7 +38,7 @@
                 <a class="nav-link" href="#Kontak & Alamat">Kontak & Alamat</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/webskolah/panel/login1.php">Login</a>
+                <a class="nav-link" href="/webskolah/admin_panel/dist/login.php">Login</a>
               </li>
             </ul>
           </div>
