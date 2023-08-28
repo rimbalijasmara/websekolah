@@ -71,7 +71,7 @@
         <input type="text" placeholder="Enter your username" name="username" required>
       </div>
       <div class="input-box">
-        <input type="text" placeholder="Enter your name" name="name" required>
+        <input type="text" placeholder="Enter your name" name="nama" required>
       </div>
       <div class="input-box">
         <input type="text" placeholder="Enter your email" name="email" required>
@@ -94,7 +94,7 @@
         <h3>I accept all terms & condition</h3>
       </div>
       <div class="input-box button">
-        <input type="Submit" value="Register Now" name="regis">
+        <input type="Submit" value="Register Now" name="regis" style="background:#ffc107;color:#000000;">
       </div>
       <div class="text">
         <h3>Already have an account? <a href="#">Login now</a></h3>

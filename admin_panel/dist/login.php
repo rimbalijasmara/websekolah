@@ -93,7 +93,7 @@ if (isset($_POST['Login'])) {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: lightskyblue;
+            background-color: #ffc107;
             
             justify-content: center;
             align-items: center;
@@ -129,7 +129,7 @@ if (isset($_POST['Login'])) {
             width: 100%;
             padding: 10px;
             background-color: #121212;
-            color: lightskyblue;
+            color: #ffc107;
             border: none;
             border-radius: 5px;
             cursor: pointer;
