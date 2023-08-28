@@ -79,6 +79,17 @@ if (isset($_POST['Login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post">
+        <center>
+        </center><br>
+        <input type="text" name="username" placeholder="Username" alt="username" required="required"><br>
+        <input type="password" name="password" placeholder="Password" alt="password" required="required"><br><br>
+        <input type="submit" name="Login" value="Login" alt="submit">
+        
+    </form>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -128,16 +139,5 @@ if (isset($_POST['Login'])) {
             background-color: #ffffff;
         }
     </style>
-</head>
-<body>
-    <h1>Login</h1>
-    <form method="post">
-        <center>
-        </center><br>
-        <input type="text" name="username" placeholder="Username" alt="username" required="required"><br>
-        <input type="password" name="password" placeholder="Password" alt="password" required="required"><br><br>
-        <input type="submit" name="Login" value="Login" alt="submit">
-        
-    </form>
 </body>
 </html>
