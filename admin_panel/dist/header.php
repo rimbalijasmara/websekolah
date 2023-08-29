@@ -1,3 +1,18 @@
+<?php
+session_start();
+if (isset($_SESSION['login'])){
+    ?>
+    <script>
+        alert("Welcome");
+        window.open('login.php','_self');
+    </script>
+    <?php 
+}else {
+    $status = $_SESSION['akses'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -64,25 +79,13 @@
                                     <a class="nav-link" href="Jumlah.php">Jumlah</a>
                                 </nav>
                             </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-sidenav-menu-heading">User Interface</div>
+                            
+                            <a class="nav-link" href="register.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
-                                Registrasi & Login
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                Register
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.php">Login</a>
-                                            <a class="nav-link" href="register.php">Registerasi</a>
-                                            <a class="nav-link" href="password.php">Forgot Password</a>
-                                        </nav>
-                                </nav>
-                            </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
+
                             <a class="nav-link" href="data_user.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Data User

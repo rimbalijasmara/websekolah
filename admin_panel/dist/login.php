@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include 'koneksi.php';
 
 // Check if user is already logged in using session
@@ -43,7 +43,7 @@ if (isset($_POST['Login'])) {
       $_SESSION['nama'] = $row['nama'];
       $_SESSION['id_user'] = $row['id_user'];
       $_SESSION['username'] = $username;
-      $_SESSION['hak_akses'] = $row['hak_akses'];
+      $_SESSION['akses'] = $row['akses'];
       $_SESSION['login'] = true;
 
       if (isset($_POST['remember'])) {
