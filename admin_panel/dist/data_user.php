@@ -39,6 +39,8 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                
+            <!-- Php Nya -->
             <?php
                         include 'koneksi.php';
                         $no = 1;
@@ -64,6 +66,7 @@
                 }
             ?>
 
+                    <!-- Kolom -->
                                         <tr>
                                             <td></td>
                                             <td></td>
