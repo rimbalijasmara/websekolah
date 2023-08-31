@@ -22,7 +22,7 @@
                 $password2 = mysqli_real_escape_string($conn, $_POST['password2']);
                 $nama = htmlspecialchars($_POST['nama']);
                 $email = htmlspecialchars($_POST['email']);
-                $akses = htmlspecialchars($_POST['akses']);
+                $akses = htmlspecialchars($_POST['hak_akses']);
 
                   //cek username
                   $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
@@ -77,7 +77,7 @@
         <input type="text" placeholder="Enter your email" name="email" required>
       </div>
       <div class="input-box">
-      <select class="form-select form-control form-control user" id="hakakses" name="akses" required>
+      <select class="form-select form-control form-control user" id="hakakses" name="hak_akses" required>
               <option value="" disabled selected>Pilih Hak Akses</option>
               <option value="admin">Admin</option>
               <option value="operator">Operator</option>

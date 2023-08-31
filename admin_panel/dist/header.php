@@ -1,14 +1,14 @@
 <?php
 session_start();
-if (isset($_SESSION['login'])){
+if (!isset($_SESSION['login'])){
     ?>
     <script>
-        alert("Welcome");
+        alert("Harap Login Terlebih Dahulu");
         window.open('login.php','_self');
     </script>
     <?php 
 }else {
-    $status = $_SESSION['akses'];
+    $status = $_SESSION['hak_akses'];
 }
 
 ?>
@@ -48,7 +48,7 @@ if (isset($_SESSION['login'])){
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="aktivitas_login.php">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                     </ul>
@@ -65,10 +65,11 @@ if (isset($_SESSION['login'])){
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Admin
                             </a>
+                        <?php if ($_SESSION['hak_akses']=='admin') : ?>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Master
+                                Menu
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -79,8 +80,23 @@ if (isset($_SESSION['login'])){
                                     <a class="nav-link" href="Jumlah.php">Jumlah</a>
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">User Interface</div>
+                            <?php endif;?>
+
+                            <div class="sb-sidenav-menu-heading">Data Siswa</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-database"></i></div>
+                                Pendaftaran
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="agama.php">Registrasi Siswa Baru</a>
+                                    <a class="nav-link" href="Kewarganegaraan.php">Tabel Data Siswa</a>
+                                </nav>
+                            </div>
+                    <div class="sb-sidenav-menu-heading">Data</div>
                             
+                    <?php if ($_SESSION['hak_akses']=='admin') : ?>
                             <a class="nav-link" href="register.php">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-user"></i></div>
                                 Register
@@ -90,11 +106,24 @@ if (isset($_SESSION['login'])){
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Data User
                             </a>
-                        </div>
+                    <?php endif;?>
+
+                            <a class="nav-link" href="logout.php">
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+                                Logout
+                            </a>                       
+                    </div>
+                        
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <?php
+                            if (isset($_SESSION['nama'], $_SESSION['hak_akses'])) {
+                        ?>
+                        <div class="fs-6"><i class="fa-solid fa-user"></i> <?= $_SESSION['nama']; ?> Sebagai <?= $_SESSION['hak_akses']; ?></div>
+
+                        <?php
+                            }
+                        ?>
                     </div>
                 </nav>
             </div>

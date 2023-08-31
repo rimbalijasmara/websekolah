@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 include 'koneksi.php';
 
 // Check if user is already logged in using session
@@ -27,7 +27,7 @@ if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
 }
 
 // Attempt to log in with submitted form
-if (isset($_POST['Login'])) {
+if (isset($_POST['login'])) {
   $username = htmlspecialchars($_POST["username"]);
   $password = htmlspecialchars($_POST["password"]);
 
@@ -43,7 +43,7 @@ if (isset($_POST['Login'])) {
       $_SESSION['nama'] = $row['nama'];
       $_SESSION['id_user'] = $row['id_user'];
       $_SESSION['username'] = $username;
-      $_SESSION['akses'] = $row['akses'];
+      $_SESSION['hak_akses'] = $row['hak_akses'];
       $_SESSION['login'] = true;
 
       if (isset($_POST['remember'])) {
@@ -87,7 +87,7 @@ if (isset($_POST['Login'])) {
         </center><br>
         <input type="text" name="username" placeholder="Username" alt="username" required="required"><br>
         <input type="password" name="password" placeholder="Password" alt="password" required="required"><br><br>
-        <input type="submit" name="Login" value="Login" alt="submit">
+        <input type="submit" name="login" value="login" alt="submit">
         
     </form>
     <style>
