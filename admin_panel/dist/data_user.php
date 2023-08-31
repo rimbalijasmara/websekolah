@@ -2,7 +2,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Tables</h1>
+                        <h1 class="mt-4">Data User</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                             <li class="breadcrumb-item active">Tables</li>
@@ -57,7 +57,7 @@
                 <td><?= $row['email']; ?></td>
                 <td><?= $row['hak_akses']; ?></td>
                 <td>
-                    <a class="btn btn-warning btn-sm" type="button"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a class="btn btn-warning btn-sm" type="button" href="datauser_edit.php?id_user=<?= $row['id_user']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                     <a class="btn btn-danger btn-sm" type="button" onclick="return confirm('Data akan di Hapus?')" href="data_delete.php?id_user=<?= $row['id_user']; ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </main>
-                <?php include'footer.php';?>
+                <?php include 'footer.php';?>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
