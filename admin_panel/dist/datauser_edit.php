@@ -40,14 +40,14 @@ if (isset($_POST['simpan'])) {
         echo "
             <script>
                 alert('Data user Berhasil DiUpdate');
-                document.location.href='data-user.php';
+                document.location.href='data_user.php';
             </script>
             ";
     } else {
         echo "
             <script>
                 alert('Data user Gagal Update');
-                document.location.href='data-user.php';
+                document.location.href='datauser_edit.php';
             </script>
             ";
     }
@@ -96,7 +96,7 @@ $edit = mysqli_fetch_assoc($data);
                                     <input type="hidden" name="id_user" id="id_user" value="<?= $edit['id_user']; ?>">
                                     <div class="row">
                                         <div class="form-floating mb-3">
-                                            <input type="text" name="username" class="form-control" id="username" value="<?= $edit['username'] ?>">
+                                            <input type="text" name="username" class="form-control" id="username" value="<?= $edit['username']; ?>">
                                             <label class="mx-2" for="username">Username</label>
                                         </div>
                                         <div class="form-floating mb-3">
@@ -112,7 +112,7 @@ $edit = mysqli_fetch_assoc($data);
                                             <label class="mx-2" for="rfloatingPassword">Repeat Password</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="email" name="email" class="form-control" id="floatingInput" value="<?= $edit['email'] ?>">
+                                            <input type="email" name="email" class="form-control" id="floatingInput" value="<?= $edit['email']; ?>">
                                             <label class="mx-2" for="floatingInput">Email address</label>
                                         </div>
                                         <div>

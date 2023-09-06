@@ -75,7 +75,7 @@ if (!isset($_SESSION['login'])){
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="agama.php">Agama</a>
-                                    <a class="nav-link" href="Kewarganegaraan.php">Kewarganegara</a>
+                                    <a class="nav-link" href="Kewarganegaraan.php">Kewarganegaraan</a>
                                     <a class="nav-link" href="Jurusan.php">Jurusan</a>
                                     <a class="nav-link" href="Jumlah.php">Jumlah</a>
                                 </nav>
@@ -90,7 +90,7 @@ if (!isset($_SESSION['login'])){
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="agama.php">Registrasi Siswa Baru</a>
+                                    <a class="nav-link" href="form-daftar-Siswa.php">Registrasi Siswa Baru</a>
                                     <a class="nav-link" href="Kewarganegaraan.php">Tabel Data Siswa</a>
                                 </nav>
                             </div>

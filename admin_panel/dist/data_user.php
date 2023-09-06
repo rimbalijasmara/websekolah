@@ -25,7 +25,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Position</th>
-                                            <th>Salary</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -35,7 +35,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Position</th>
-                                            <th>Salary</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
