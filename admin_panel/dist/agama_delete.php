@@ -1,10 +1,10 @@
 <?php
 include 'koneksi.php';
-$id = $_GET["id_user"];
+$id = $_GET["id_agama"];
 //mengambil id yang ingin dihapus
 
     //jalankan query DELETE untuk menghapus data
-    $query = "DELETE FROM user WHERE id_user='$id' ";
+    $query = "DELETE FROM agama WHERE id_agama='$id' ";
     $hasil_query = mysqli_query($conn, $query);
 
     //periksa query, apakah ada kesalahan
@@ -12,5 +12,5 @@ $id = $_GET["id_user"];
       die ("Gagal menghapus data: ".mysqli_errno($conn).
        " - ".mysqli_error($conn));
     } else {
-      echo "<script>alert('Record Has Been Removed.');window.location='data_user.php';</script>";
+      echo "<script>alert('Record Has Been Removed.');window.location='agama.php';</script>";
     }

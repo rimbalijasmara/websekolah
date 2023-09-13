@@ -39,14 +39,14 @@ if (isset($_POST['simpan'])) {
     if (mysqli_affected_rows($conn) > 0) {
         echo "
             <script>
-                alert('Data user Berhasil DiUpdate');
+                alert('Susccess');
                 document.location.href='data_user.php';
             </script>
             ";
     } else {
         echo "
             <script>
-                alert('Data user Gagal Update');
+                alert('Something Wrong');
                 document.location.href='datauser_edit.php';
             </script>
             ";

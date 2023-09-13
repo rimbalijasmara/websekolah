@@ -90,7 +90,7 @@ if (!isset($_SESSION['login'])){
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="form-daftar-Siswa.php">Registrasi Siswa Baru</a>
+                                    <a class="nav-link" href="daftar-siswa.php">Registrasi Siswa Baru</a>
                                     <a class="nav-link" href="Kewarganegaraan.php">Tabel Data Siswa</a>
                                 </nav>
                             </div>

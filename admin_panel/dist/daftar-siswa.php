@@ -21,6 +21,20 @@
                             <input type="text" name="orang-tua" class="form-control" id="nm" placeholder="Nama">
                             <label class="mx-2" for="nm">Nama Orang Tua</label>
                         </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="asal-sekolah" class="form-control" id="nm" placeholder="Nama">
+                            <label class="mx-2" for="nm">Asal Sekolah</label>
+                        </div>
+                        <div>
+                            <select name="hak_akses" class="form-select form-select mb-3" aria-label=".form-select-lg example">
+                                <option selected hidden disabled>-- Agama --</option>
+                                <option value="islam">Islam</option>
+                                <option value="katolik">Katolik</option>
+                                <option value="kristen">Kristen</option>
+                                <option value="buddha">Buddha</option>
+                                <option value="hindu">Hindu</option>
+                            </select>
+                        </div>
                         <div>
                             <select name="hak_akses" class="form-select form-select mb-3" aria-label=".form-select-lg example">
                                 <option selected hidden disabled>-- Jurusan --</option>
@@ -31,16 +45,9 @@
                                 <option value="DKV">DKV</option>
                             </select>
                         </div>
-                        <div>
-                            <select name="hak_akses" class="form-select form-select mb-3" aria-label=".form-select-lg example">
-                                <option selected hidden disabled>-- Kewarganegaraan --</option>
-                                <option value="admin">admin</option>
-                                <option value="operator">operator</option>
-                            </select>
-                        </div>
-                        <div class="col-6">
+                        <center> <div class="col-6">
                             <input class="btn btn-success btn-block w-100" type="submit" name="regis" value="Daftar">
-                        </div>
+                        </div></center>
                     </div>
                 </form>
                 </div>
