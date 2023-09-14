@@ -67,7 +67,7 @@ if ($_SESSION['hak_akses'] != 'admin') {
                 <td><?= $data['user_update']; ?></td>
                 <td><?= $data['hak_akses']; ?> (<?= $data['nama']; ?>)</td>
                 <td>
-                    <a class="btn btn-warning" type="button" href="edit_agama.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
+                    <a class="btn btn-warning" type="button" href="agama_edit.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
                     <a class="btn btn-danger btn-sm" type="button" onclick="return confirm('Data akan di Hapus?')" href="agama_delete.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>

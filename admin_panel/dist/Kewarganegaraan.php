@@ -29,11 +29,11 @@ if ($_SESSION['hak_akses'] != 'admin') {
                             </div>
                             <div class="card-body">
                         <div class="col-2 mb-2">
-                            <a type="submit" href="form-agama.php" name="add_data" class="btn btn-success btn-block" >Tambah Data
+                            <a type="submit" href="form-Kewarganegaraan.php" name="add_data" class="btn btn-success btn-block" >Tambah Data
                             <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                         </div>
                                 <table id="datatablesSimple">
-                                thead>
+                                <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Negara</th>
@@ -49,26 +49,26 @@ if ($_SESSION['hak_akses'] != 'admin') {
                 
             <!-- Php Nya -->
             <?php
-            include 'koneksi.php';
-            $no = 1;
-            $query = "SELECT *
-            FROM kewarganegaraan
-            INNER JOIN user
-            ON agama.id_user = user.id_user";
-            $sql = mysqli_query($conn, $query);
-            while ($data = mysqli_fetch_assoc($sql)) {
-            ?>
+                include 'koneksi.php';
+                $no = 1;
+                $query = "SELECT *
+                FROM kewarganegaraan
+                INNER JOIN user
+                ON kewarganegaraan.id_user = user.id_user";
+                $sql = mysqli_query($conn, $query);
+                while ($data = mysqli_fetch_assoc($sql)) {
+                ?>
             <tr>
-                <td><?= $no++; ?></td>
-                <td><?= $data['nama_agama']; ?></td>
-                <td><?= $data['tgl_input']; ?></td>
-                <td><?= $data['user_input']; ?></td>
-                <td><?= $data['tgl_update']; ?></td>
-                <td><?= $data['user_update']; ?></td>
-                <td><?= $data['hak_akses']; ?> (<?= $data['nama']; ?>)</td>
+            <td><?= $no++; ?></td>
+            <td><?= $data['nama_negara']; ?></td>
+            <td><?= $data['tgl_input']; ?></td>
+            <td><?= $data['user_input']; ?></td>
+            <td><?= $data['tgl_update']; ?></td>
+            <td><?= $data['user_update']; ?></td>
+            <td><?= $data['hak_akses']; ?> (<?= $data['nama']; ?>)</td>
                 <td>
-                    <a class="btn btn-warning" type="button" href="edit_agama.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
-                    <a class="btn btn-danger btn-sm" type="button" onclick="return confirm('Data akan di Hapus?')" href="agama_delete.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-trash"></i></a>
+                    <a class="btn btn-warning" type="button" href="Kewarganegaraan-edit.php?id_negara=<?= $data['id_negara']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
+                    <a class="btn btn-danger btn-sm" type="button" onclick="return confirm('Data akan di Hapus?')" href="Kewarganegaraan-delete.php?id_negara=<?= $data['id_negara']; ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         <?php
