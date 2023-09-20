@@ -2,7 +2,7 @@
 if ($_SESSION['hak_akses'] != 'admin') {
     echo "
     <script>
-        alert('Tidak Memiliki Akses, DILARANG MASUK!');
+        alert('Anda Bukan ADMIN!!');
         document.location.href='index.php';
     </script>
     ";

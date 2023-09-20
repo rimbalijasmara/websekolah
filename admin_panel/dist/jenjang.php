@@ -2,7 +2,7 @@
 if ($_SESSION['hak_akses'] != 'admin') {
     echo "
     <script>
-        alert('Anda Bukan ADMIN!!');
+        alert('Tidak Memiliki Akses, DILARANG MASUK!');
         document.location.href='index.php';
     </script>
     ";
@@ -13,10 +13,10 @@ if ($_SESSION['hak_akses'] != 'admin') {
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Data Agama</h1>
+                        <h1 class="mt-4">Data Jenjang</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Tables Agama</li>
+                            <li class="breadcrumb-item active">Tables Jenjang</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
@@ -25,23 +25,22 @@ if ($_SESSION['hak_akses'] != 'admin') {
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                DataTable Agama
+                                DataTable
                             </div>
                             <div class="card-body">
                         <div class="col-2 mb-2">
-                            <a type="submit" href="form-agama.php" name="add_data" class="btn btn-success btn-block" >Tambah Data
+                            <a type="submit" href="form-jenjang.php" name="add_data" class="btn btn-success btn-block" >Tambah Data
                             <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                         </div>
                                 <table id="datatablesSimple">
                                 <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Agama</th>
-                                            <th>Tanggal Input</th>
+                                            <th>Nama Jenjang</th>
+                                            <th>Tgl Input</th>
                                             <th>User Input</th>
-                                            <th>Tanggal Update</th>
+                                            <th>Tgl Update</th>
                                             <th>User Update</th>
-                                            <th>Akses</th>
                                             <th>Up & Del</th>
                                         </tr>
                                     </thead>
@@ -49,26 +48,23 @@ if ($_SESSION['hak_akses'] != 'admin') {
                 
             <!-- Php Nya -->
             <?php
-            include 'koneksi.php';
-            $no = 1;
-            $query = "SELECT *
-            FROM agama
-            INNER JOIN user
-            ON agama.id_user = user.id_user";
-            $sql = mysqli_query($conn, $query);
-            while ($data = mysqli_fetch_assoc($sql)) {
-            ?>
-            <tr>
-                <td><?= $no++; ?></td>
-                <td><?= $data['nama_agama']; ?></td>
-                <td><?= $data['tgl_input']; ?></td>
-                <td><?= $data['user_input']; ?></td>
-                <td><?= $data['tgl_update']; ?></td>
-                <td><?= $data['user_update']; ?></td>
-                <td><?= $data['hak_akses']; ?> (<?= $data['nama']; ?>)</td>
+                include 'koneksi.php';
+                $no = 1;
+                $query = "SELECT *
+                FROM jenjang";
+                $sql = mysqli_query($conn, $query);
+                while ($data = mysqli_fetch_assoc($sql)) {
+                ?>
+                <tr>
+                    <td><?= $no++; ?></td>
+                    <td><?= $data['nama_jenjang']; ?></td>
+                    <td><?= $data['tgl_input']; ?></td>
+                    <td><?= $data['user_input']; ?></td>
+                    <td><?= $data['tgl_update']; ?></td>
+                    <td><?= $data['user_update']; ?></td>
                 <td>
-                    <a class="btn btn-warning" type="button" href="agama_edit.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
-                    <a class="btn btn-danger btn-sm" type="button" onclick="return confirm('Data akan di Hapus?')" href="agama_delete.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-trash"></i></a>
+                    <a class="btn btn-warning" type="button" href="jenjang-edit.php?id_negara=<?= $data['id_jenjang']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
+                    <a class="btn btn-danger btn-sm" type="button" onclick="return confirm('Data akan di Hapus?')" href="jenjang-delete.php?id_jenjang=<?= $data['id_jenjang']; ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>
         <?php

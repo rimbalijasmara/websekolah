@@ -76,6 +76,7 @@ if (!isset($_SESSION['login'])){
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="agama.php">Agama</a>
                                     <a class="nav-link" href="Kewarganegaraan.php">Kewarganegaraan</a>
+                                    <a class="nav-link" href="jenjang.php">Jenjang</a>
                                     <a class="nav-link" href="Jurusan.php">Jurusan</a>
                                     <a class="nav-link" href="Jumlah.php">Jumlah</a>
                                 </nav>
