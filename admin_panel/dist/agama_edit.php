@@ -4,7 +4,7 @@ include 'koneksi.php';
 if ($_SESSION['hak_akses'] != 'admin') {
     echo "
     <script>
-        alert('Tidak Memiliki Akses, DILARANG MASUK!');
+        alert('Anda Bukan Admin!!!');
         document.location.href='index.php';
     </script>
     ";

@@ -26,9 +26,17 @@ if ($_SESSION['hak_akses'] != 'admin') {
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Agama
-                            </div>
-                            <div class="card-body">
-                        <div class="col-2 mb-2">
+                                <div class="dropdown p-2">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Print Out
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="cetak/excel_agama.php">Cetak Excel</a></li>
+                                        <li><a class="dropdown-item" href="#">Cetak PDF</a></li>
+                                        <li><a class="dropdown-item" href="#">Cetak Word</a></li>
+                                    </ul>
+                                </div>
+                        <div class="p-2">
                             <a type="submit" href="form-agama.php" name="add_data" class="btn btn-success btn-block" >Tambah Data
                             <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
                         </div>

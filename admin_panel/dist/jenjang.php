@@ -63,7 +63,7 @@ if ($_SESSION['hak_akses'] != 'admin') {
                     <td><?= $data['tgl_update']; ?></td>
                     <td><?= $data['user_update']; ?></td>
                 <td>
-                    <a class="btn btn-warning" type="button" href="jenjang-edit.php?id_negara=<?= $data['id_jenjang']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
+                    <a class="btn btn-warning" type="button" href="jenjang-edit.php?id_jenjang=<?= $data['id_jenjang']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
                     <a class="btn btn-danger btn-sm" type="button" onclick="return confirm('Data akan di Hapus?')" href="jenjang-delete.php?id_jenjang=<?= $data['id_jenjang']; ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
             </tr>

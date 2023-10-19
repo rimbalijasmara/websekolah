@@ -1,6 +1,14 @@
 <?php include 'header.php';
 
 include 'koneksi.php';
+if ($_SESSION['hak_akses'] != 'admin') {
+    echo "
+    <script>
+        alert('Anda Bukan Admin !!!');
+        document.location.href='index.php';
+    </script>
+    ";
+}
 
 if (isset($_POST['simpan'])) {
   $id_jenjang = htmlspecialchars($_POST['id_jenjang']);
@@ -21,14 +29,14 @@ if (isset($_POST['simpan'])) {
     if (mysqli_affected_rows($conn) > 0) {
         echo "
             <script>
-                alert('Data Agama Berhasil DiUpdate');
+                alert('Data Jenjang Berhasil DiUpdate');
                 document.location.href='jenjang.php';
             </script>
             ";
     } else {
         echo "
             <script>
-                alert('Data Agama Gagal Update');
+                alert('Data Jenjang Gagal Update');
                 document.location.href='jenjang.php';
             </script>
             ";
@@ -58,7 +66,7 @@ $edit = mysqli_fetch_assoc($data);
                 <!-- Start Body Content -->
                 <main>
                     <!-- Body Content -->
-                    <div class="container mt-5">
+                    <div class="container mt-3">
                         <h3 class="text-secondary display-6">Form Edit Jenjang</h3>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -73,25 +81,25 @@ $edit = mysqli_fetch_assoc($data);
                                 <form action="" method="POST">
                                     <div class="row">
                                         <div class="form-floating mb-3">
-                                        <input type="text" name="id_jenjang" id="id_jenjang" class="form-control " value="<?= $edit['id_jenjang']; ?>">   
-                                            <label class="mx-2" for="id">Id Jenjang</label>
+                                            <input type="text" name="id_jenjang" id="id_jenjang" class="form-control " value="<?= $edit['id_jenjang']; ?>">   
+                                            <label class="mx-2" for="id_jenjang">Id Jenjang</label>
                                         </div>
 
                                         <div class="form-floating mb-3">
-                                        <input type="text" name="nama_jenjang" class="form-control" id="nm" value="<?= $edit['nama_jenjang'] ?>">  
-                                            <label class="mx-2" for="nm">Nama Jenjang</label>
+                                        <input type="text" name="nama_jenjang" class="form-control" id="nama_jenjang" value="<?= $edit['nama_jenjang']; ?>">  
+                                            <label class="mx-2" for="nama_jenjang">Nama Jenjang</label>
                                         </div>
 
                                         <div class="form-floating mb-3">
-                                        <input type="text" name="user_update" class="form-control" id="nm" value="<?= $edit['user_update'] ?>">   
-                                            <label class="mx-2" for="">User Update </label>
+                                            <input type="text" name="user_update" class="form-control" id="user_update" value="<?= $edit['user_update']; ?>">   
+                                            <label class="mx-2" for="user_update">User Update</label>
                                         </div>
-                            </div><br>
-                                    <center>
-                                        <div class="col-9">
-                                            <input class="btn btn-warning btn-block w-100" type="submit" name="simpan" value="Simpan">
-                                        </div>
-                                    </center>
+                                        </div><br>
+                                        <center>
+                                            <div class="col-9">
+                                                <input class="btn btn-warning btn-block w-100" type="submit" name="simpan" value="Simpan">
+                                            </div>
+                                        </center>
                                     </div>
                                 </form>
                             </div>

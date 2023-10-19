@@ -4,7 +4,7 @@ include 'koneksi.php';
 if ($_SESSION['hak_akses'] != 'admin') {
     echo "
     <script>
-        alert('Tidak Memiliki Akses, DILARANG MASUK!');
+        alert('Anda Bukan Admin !!!');
         document.location.href='index.php';
     </script>
     ";
@@ -15,6 +15,7 @@ if (isset($_POST['simpan'])) {
     $tgl_update = date('Y-m-d');
     $user_update = htmlspecialchars($_POST['user_update']);
     $id_user = htmlspecialchars($_POST['id_user']);
+
     $query = "UPDATE Kewarganegaraan SET
             id_negara='$id_negara',
             nama_negara='$nama_negara',
@@ -23,8 +24,8 @@ if (isset($_POST['simpan'])) {
             id_user='$id_user'
             WHERE id_negara='$id_negara'
             ";
-    // var_dump($query);
-    // exit();
+    // $querry
+    // exit
     mysqli_query($conn, $query);
     if (mysqli_affected_rows($conn) > 0) {
         echo "
