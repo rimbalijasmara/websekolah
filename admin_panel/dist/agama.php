@@ -50,6 +50,7 @@ if ($_SESSION['hak_akses'] != 'admin') {
                                             <th>Tanggal Update</th>
                                             <th>User Update</th>
                                             <th>Akses</th>
+                                            <th>Detail</th>
                                             <th>Up & Del</th>
                                         </tr>
                                     </thead>
@@ -74,6 +75,7 @@ if ($_SESSION['hak_akses'] != 'admin') {
                 <td><?= $data['tgl_update']; ?></td>
                 <td><?= $data['user_update']; ?></td>
                 <td><?= $data['hak_akses']; ?> (<?= $data['nama']; ?>)</td>
+                <td><a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-book-open"></i></a></td>
                 <td>
                     <a class="btn btn-warning" type="button" href="agama_edit.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-pen-clip" aria-hidden="true"></i></a>
                     <a class="btn btn-danger btn-sm" type="button" onclick="return confirm('Data akan di Hapus?')" href="agama_delete.php?id_agama=<?= $data['id_agama']; ?>"><i class="fa-solid fa-trash"></i></a>
@@ -88,6 +90,76 @@ if ($_SESSION['hak_akses'] != 'admin') {
                             </div>
                         </div>
                     </div>
+                
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="" method="POST">
+            <div class="row">
+                <div class="form-group row">
+                    <input type="text" name="id_agama" id="id_agama" required="required" class="form-control " readonly>
+                    
+                </div>
+                <div class="form-group row">
+                    <label class="mx-2" for="Id ">ID Agama<span class="required"></span></label>
+                    <div class="col-md-9">
+                        <input type="text" id="nama_agama" name="nama_agama" required="required" class="form-control" readonly>
+                    </div>
+                </div>
+
+                </div>
+                <div class="form-group row">
+                 <label class="mx-2" for="agama">Tanggal Input</label>
+                    <div class="col-md-9">
+                        <input id="tgl_input" name="tgl_input" class="date-picker form-control" type="date" required="required" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                 <label class="mx-2" for="agama">Nama agama</label>
+                    <div class="col-md-9">
+                        <input id="tgl_input" name="tgl_input" class="date-picker form-control" type="date" required="required" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="mx-2" for="user input">User Input</label>
+                    <div class="col-md-9">
+                    <input type="text" id="user_input" name="user_input" required="required" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <select class="form-select" aria-label="Default select example" id="id_user" name="id_user">
+                        <option selected hidden disabled>-- Hak Akses --</option>
+                        <?php
+                            $sql = mysqli_query($conn, "SELECT * FROM user WHERE hak_akses = '$status' AND id_user='$_SESSION[id_user];'");
+                            while ($data = mysqli_fetch_assoc($sql)) {
+                            ?>
+                                <option value="<?= $data['id_user'] ?>"><?= $data['hak_akses'] ?> (<?= $data['nama'] ?>)</option>
+                            <?php
+                            }
+                            ?>
+                    </select>
+                </div>
+
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+            
                 </main>
                 <?php include 'footer.php';?>
             </div>
